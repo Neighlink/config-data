@@ -9,3 +9,5 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: https://registryserviceneightlink.herokuapp.com
+    server:
+      enableSelfPreservation: false
