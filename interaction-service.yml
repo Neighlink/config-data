@@ -42,7 +42,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://registryserviceneightlink.herokuapp.com/
+      defaultZone: http://localhost:8099/eureka/
 # Feign and Hystrix
 Feign:
   hystrix:
