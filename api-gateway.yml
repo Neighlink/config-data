@@ -3,6 +3,10 @@ server:
 
 eureka:
   client:
+    fetch-registry: true
+    register-with-eureka: true
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: https://registryserviceneightlink.herokuapp.com/
 
