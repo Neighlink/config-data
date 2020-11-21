@@ -8,7 +8,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: https://registryserviceneightlink.herokuapp.com/
+      defaultZone: http://localhost:8099/eureka/
 
 spring:
   cloud:
