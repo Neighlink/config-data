@@ -29,7 +29,6 @@ management:
       show-details: ALWAYS
 ---
 spring:
-  profiles: docker
   application:
     name: eureka-server
 
