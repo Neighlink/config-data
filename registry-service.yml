@@ -29,6 +29,7 @@ management:
       show-details: ALWAYS
 ---
 spring:
+  profiles: docker
   application:
     name: eureka-server
 
@@ -45,7 +46,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://eureka-server:8099/eureka/
+      defaultZone: http://172.24.0.3:8099/eureka/
   server:
     enable-self-preservation: false
 management:
