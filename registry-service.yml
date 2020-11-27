@@ -1,61 +1,11 @@
 server:
   port: 8099
 
-spring:
-  application:
-    name: eureka-server
-
 eureka:
   instance:
-    hostname: localhost
-    lease-expiration-duration-in-seconds: 30
-    lease-renewal-interval-in-seconds: 30
+    hostname: 172.24.0.3
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
-  server:
-    enable-self-preservation: false
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    shutdown:
-      enabled: true
-    health:
-      show-details: ALWAYS
----
-spring:
-  profiles: docker
-  application:
-    name: eureka-server
-
-server:
-  port: 8099
-
-eureka:
-  instance:
-    hostname: eureka-server
-    prefer-ip-address: true
-    lease-expiration-duration-in-seconds: 30
-    lease-renewal-interval-in-seconds: 30
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://172.24.0.3:8099/eureka/
-  server:
-    enable-self-preservation: false
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    shutdown:
-      enabled: true
-    health:
-      show-details: ALWAYS
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
