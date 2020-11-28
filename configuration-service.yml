@@ -8,33 +8,19 @@ server:
 # To See H2 Console in Browser:
 # http://localhost:8091/h2-console
 # Enabling H2 Console
+# ===============================
+# DB
+# ===============================
 spring:
-  h2:
-    console:
-      enabled: true
-  # ===============================
-  # DB
-  # ===============================
   datasource:
-    url: jdbc:h2:mem:configurationDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    platform: h2
-    username: sa
-    password:
-
-  # ===============================
-  # JPA / HIBERNATE
-  # ===============================
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://b281a7a6cf7fca:02913f73@us-cdbr-east-02.cleardb.com/heroku_948a42d3a5ec63a?reconnect=true
+    username: b281a7a6cf7fca
+    password: 02913f73
   jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
     show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: false
-        format_sql: false
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
